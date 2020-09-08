@@ -3,17 +3,28 @@
 #include <iostream>
 #include <string>
 
-int answer;
+int option;
 
 int main()
 {
+    int option = 0; //When initialized, option should be 0 until input is recieved from the user//
+
     //Header//
-    std::cout << "\t\t\t\t\t Test Menu";
+    std::cout << "\t\t\t\t\t Test Menu\n\n";
 
     //Choices presented//
     do
     {
-        switch (answer)
+        std::cout <<
+            "Choices:\n"
+            "\t1. Print name\n"
+            "\t2. Print 'How are you?'\n"
+            "\t3. Print age\n"
+            "\t4. Exit the program\n"
+            "Choose an option (1-4): ";
+        std::cin >> option;
+
+        switch (option) //checks what the user input value in 'option' and prints the correct choice//
         {
             case 1:
                 std::cout << "1. Print name\n";
@@ -30,7 +41,8 @@ int main()
             default:
                 std::cout << "Invalid input. Please pick a number from 1-4.\n";
         }
-    } while (answer <= 0 || answer > 3);
-    return answer;
+    } while (option < 4 && option > 0);
+    return option;
+    return 0;
 }
 
